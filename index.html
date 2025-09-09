@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+      color: #333;
+    }
+
+    /* Header */
+    header {
+      background: #0077b6;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+    }
+
+    /* Navigation */
+    nav {
+      background: #023e8a;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+    }
+
+    /* Section */
+    section {
+      padding: 40px;
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      margin-top: 20px;
+      border-radius: 8px;
+    }
+    h2 {
+      color: #0077b6;
+      border-bottom: 2px solid #0077b6;
+      padding-bottom: 5px;
+    }
+    ul {
+      list-style-type: square;
+      padding-left: 20px;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      background: #0077b6;
+      color: white;
+      padding: 15px;
+      margin-top: 20px;
+    }
+
+    /* ---------- HOME SECTION ---------- */
+    .home {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 80px 40px;
+      background: #2fea9f; /* Light background */
+      color: #000; /* Black text */
+      border-radius: 8px;
+    }
+
+    .home-text {
+      max-width: 600px;
+    }
+
+    .home-text h1 {
+      font-size: 40px;
+      color: #000; /* Black */
+      text-shadow: none; /* Removed glowing */
+    }
+
+    .home-text h2 {
+      font-size: 28px;
+      margin: 15px 0;
+      color: #000; /* Black */
+    }
+
+    .home-text h2 span {
+      color: #000; /* Black */
+      text-shadow: none; /* Removed glowing */
+    }
+
+    .home-text p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-top: 20px;
+      color: #000; /* Black */
+    }
+
+    /* Social Icons */
+    .social-icons {
+      margin-top: 20px;
+    }
+
+    .social-icons a {
+      display: inline-block;
+      margin-right: 15px;
+      font-size: 22px;
+      color: #021011;
+      border: 2px solid #076873;
+      border-radius: 50%;
+      padding: 10px;
+      transition: 0.3s;
+    }
+
+    .social-icons a:hover {
+      background: #00e5ff;
+      color: #0d0d0d;
+    }
+
+    /* Profile Image */
+    .home-image img {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      border: 5px solid #00e5ff;
+      box-shadow: 0 0 30px #00e5ff, 0 0 60px #00e5ff;
+      object-fit: cover;
+    }
+
+    @media (max-width: 900px) {
+      .home {
+        flex-direction: column;
+        text-align: center;
+      }
+      .home-image {
+        margin-top: 40px;
+      }
+    }
+
+    /* ---------- EDUCATION CARD ---------- */
+    .edu-card {
+      background: #f9f9f9;
+      padding: 20px;
+      margin: 15px 0;
+      border-left: 5px solid #0077b6;
+      border-radius: 6px;
+    }
+    .edu-card h3 {
+      margin: 0;
+      color: #0077b6;
+    }
+    .edu-card p {
+      margin: 5px 0 10px;
+      color: #555;
+    }
+    .edu-card h4 {
+      margin-top: 10px;
+      color: #023e8a;
+    }
+    .edu-card ul {
+      margin: 5px 0 10px 20px;
+      color: #333;
+    }
+
+    /* ---------- CONTACT SECTION ---------- */
+    #contact {
+      text-align: center;
+      padding: 50px 20px;
+      background: #fff;
+      color: #0077b6;
+    }
+    #contact h2 {
+      margin-bottom: 30px;
+      font-size: 32px;
+      color: #0077b6;
+    }
+    .contact-container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .contact-image img {
+      max-width: 300px;
+      border-radius: 12px;
+    }
+    .contact-details {
+      max-width: 500px;
+      text-align: left;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 2px solid #0077b6;
+      border-radius: 8px;
+      background: #f9f9f9;
+      color: #333;
+    }
+    .contact-form button {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 25px;
+      background: #0077b6;
+      color: #fff;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .contact-form button:hover {
+      background: #023e8a;
+    }
+    .social-links {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+    .social-card {
+      text-align: center;
+      text-decoration: none;
+      color: #0077b6;
+      transition: 0.3s;
+    }
+    .social-card i {
+      font-size: 40px;
+      padding: 20px;
+      border-radius: 50%;
+      border: 2px solid #0077b6;
+      display: inline-block;
+      margin-bottom: 10px;
+      color: #0077b6;
+    }
+    .social-card p {
+      margin: 0;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    .social-card:hover i {
+      background: #0077b6;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>Janani V</h1>
+    <p>Software Tester | Fresher | 2025 Passed Out</p>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- HOME SECTION -->
+  <section class="home" id="home">
+    <div class="home-text">
+      <h1>Hi!!</h1>
+      <h2>I'm a <span>Software Testing Engineer</span> </h2>
+      <p>
+        I have completed software testing course at Qspiders<br>
+        Now I am looking for a full time job.
+      </p>
+      <!-- Social Media -->
+      <div class="social-icons">
+        <a href="https://www.facebook.com/share/1ByWXrHf1L/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/_jany_57?igsh=MjB2cHVzM3I2NWgz" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/in/janani-v-59a708310" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+    <div class="home-image">
+      <img src="c:\Users\GOKUL\Downloads\WhatsApp Image 2025-09-08 at 20.07.13_66562742.jpg" alt="Profile Photo">
+    </div>
+  </section>
+
+  <!-- ---------- ABOUT ME SECTION ---------- -->
+<section class="about" id="about">
+  <div class="about-container">
+    <!-- About Text -->
+    <div class="about-text">
+      <h2>About Me</h2>
+      <p>
+        I am a Software Testing Engineer. <br>
+        I have completed Software Testing course at Qspiders. <br>
+        Now I am Looking for a QA full time job.
+      </p>
+
+      <div class="about-info">
+        <p><strong>Name:</strong> Janani V</p>
+        <p><strong>Date of Birth:</strong> 16/03/2004</p>
+        <p><strong>Address:</strong> Nambiyur, Erode</p>
+        <p><strong>Pin Code:</strong> 638402</p>
+        <p><strong>Email:</strong> vjanani717@gmail.com</p>
+        <p><strong>Phone:</strong> 6380441247</p>
+      </div>
+
+      <a href="https://drive.google.com/file/d/1ffDSwIbLg3t0XDpJHEC8uwPI5xoHNFfw/view?usp=drivesdk" class="btn" download>Download Resume</a>
+    </div>
+  </div>
+</section>
+ <!-- ---------- SKILLS SECTION ---------- -->
+<!-- ---------- SKILLS SECTION ---------- -->
+<section class="skills" id="skills">
+  <div class="skills-container">
+    <h2>My Skills</h2>
+    <p>Here are some of my technical skills and proficiency levels.</p>
+
+    <div class="skill-box">
+      <h3>SQL <span>90%</span></h3>
+      <div class="skill-bar">
+        <div class="skill-level" style="width: 90%;"></div>
+      </div>
+    </div>
+
+    <div class="skill-box">
+      <h3>Java <span>70%</span></h3>
+      <div class="skill-bar">
+        <div class="skill-level" style="width: 70%;"></div>
+      </div>
+    </div>
+
+    <div class="skill-box">
+      <h3>Manual Testing <span>95%</span></h3>
+      <div class="skill-bar">
+        <div class="skill-level" style="width: 95%;"></div>
+      </div>
+    </div>
+
+    <div class="skill-box">
+      <h3>Selenium <span>80%</span></h3>
+      <div class="skill-bar">
+        <div class="skill-level" style="width: 80%;"></div>
+      </div>
+    </div>
+
+    <div class="skill-box">
+      <h3>Postman <span>70%</span></h3>
+      <div class="skill-bar">
+        <div class="skill-level" style="width: 70%;"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <h3>ShopperStack Application Testing</h3>
+    <ul>
+      <li>Performed Functional, System, and Integration Testing on the ShopperStack e-commerce application.</li>
+      <li>Designed and executed test cases for login, product search, cart, and checkout modules.</li>
+      <li>Documented test scenarios, results, and defects in an Excel sheet.</li>
+    </ul>
+    <a href="https://docs.google.com/spreadsheets/d/1lT1FT_wZFtb0kR_vJea1R5n27-IybRAA_XKuksjrApM/edit?usp=drivesdk" target="_blank">View Project (Excel)</a>
+    <br><br>
+    <h3>Swiggy-Based Food Ordering System (Java)</h3>
+    <ul>
+      <li>Developed a Java console-based food ordering system simulating Swiggy.</li>
+      <li>Implemented restaurant and menu selection, order confirmation, and payment flow with OTP verification.</li>
+      <li>Applied Java concepts such as switch-case, loops, Scanner input, and random number generation.</li>
+      <li>Gained experience in building a real-world application flow using core Java programming.</li>
+    </ul>
+    <a href="https://docs.google.com/document/d/1qETFXKih4ZVIA9QXrMjNa_l_6ejAV6bhQUajgRov8HU/edit?usp=drivesdk" target="_blank">View Project (Source code)</a>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <h2>Education</h2>
+    <div class="edu-card">
+      <h3>Bachelor of Engineering (EEE)</h3>
+      <p>Sengunthar Engineering College | 2021 – 2025</p>
+      <h4>Achievements:</h4>
+      <ul>
+        <li>Won A.P.J Abdul Kalam Award for good in academics and extra curricular activities</li>
+        <li>Best Outgoing Student Award from Sengunthar Institutions</li>
+        <li>Received DG NCC Commendation Card from Delhi Headquarters</li>
+      </ul>
+    </div>
+    <div class="edu-card">
+      <h3>Higher Secondary (XII)</h3>
+      <p>K.O.M Government Girls Higher Secondary School | 2019 – 2021</p>
+      <h4>Achievements:</h4>
+      <ul>
+        <li>Secured First Rank in Tamil</li>
+      </ul>
+    </div>
+    <div class="edu-card">
+      <h3>Secondary School (X)</h3>
+      <p>Government High School | 2018 – 2019</p>
+      <h4>Achievements:</h4>
+      <ul>
+        <li>Scored School First in Social Science (98/100)</li>
+        <li>Won Second position in State Level quiz Competition</li>
+        <li>Won Second place in district level Kabaddi Match</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <div class="contact-container">
+      <div class="contact-image">
+        <img src="c:\Users\GOKUL\Downloads\WhatsApp Image 2025-09-08 at 20.07.13_66562742.jpg" alt="Your Photo">
+      </div>
+      <div class="contact-details">
+        <form class="contact-form">
+          <input type="text" placeholder="Your Name" required>
+          <input type="email" placeholder="Your Email" required>
+          <input type="text" placeholder="Subject">
+          <textarea placeholder="Message"></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+        <div class="social-links">
+          <a href="https://www.facebook.com/share/1ByWXrHf1L/" target="_blank" class="social-card facebook">
+            <i class="fab fa-facebook-f"></i>
+            <p>Facebook</p>
+          </a>
+          <a href="https://www.instagram.com/_jany_57?igsh=MjB2cHVzM3I2NWgz" target="_blank" class="social-card instagram">
+            <i class="fab fa-instagram"></i>
+            <p>Instagram</p>
+          </a>
+          <a href="https://www.linkedin.com/in/janani-v-59a708310" target="_blank" class="social-card linkedin">
+            <i class="fab fa-linkedin-in"></i>
+            <p>LinkedIn</p>
+          </a>
+          <a href="https://github.com/" target="_blank" class="social-card github">
+            <i class="fab fa-github"></i>
+            <p>GitHub</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Janani V | Portfolio Website</p>
+  </footer>
+
+</body>
+</html>
